@@ -46,8 +46,8 @@ const VerifyEmail = () => {
   return (
     <div className="container mt-16">
       {loading ? (
-        <div>
-          <div>Loading...</div>
+        <div >
+          <div className="text-white">Loading...</div>
         </div>
       ) : (
         <div className="bg-white shadow-md rounded-lg p-8 mx-4 sm:mx-auto max-w-md w-full">
