@@ -113,9 +113,6 @@ export const signup = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create the user
-    let approved = accountType === "Instructor" ? false : true;
-
     // Create the Additional Profile For User
     const profileDetails = await Profile.create({
       gender: null,
@@ -129,8 +126,7 @@ export const signup = async (req, res) => {
       lastName,
       email,
       password: hashedPassword,
-      accountType: accountType,
-      approved: approved,
+      accountType,
       additionalDetails: profileDetails._id,
       image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
     });

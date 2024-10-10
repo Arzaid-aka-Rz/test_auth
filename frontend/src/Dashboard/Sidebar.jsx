@@ -1,4 +1,4 @@
-import { ACCOUNT_TYPE } from "@/data/constants";
+
 import { useDispatch, useSelector } from "react-redux";
 import SidebarLink from "./SidebarLink";
 import { LogOut } from "lucide-react";
@@ -30,13 +30,6 @@ const Sidebar = () => {
       name: "My Profile",
       path: "/dashboard/my-profile",
       icon: "CircleUserRound",
-    },
-    {
-      id: 2,
-      name: "Dashboard",
-      path: "/dashboard/instructor",
-      type: ACCOUNT_TYPE.INSTRUCTOR,
-      icon: "CircleGauge",
     },
   ];
   

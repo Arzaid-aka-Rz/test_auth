@@ -11,12 +11,11 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./auth/PrivateRoute";
 import MyProfile from "./Dashboard/MyProfile";
 import Settings from "./Dashboard/Settings/Settings";
-import { ACCOUNT_TYPE } from "./data/constants";
-import { useSelector } from "react-redux";
-import Instructor from "./Dashboard/Instructor/Instructor";
+
+
 
 function App() {
-  const { user } = useSelector((state) => state.profile)
+
   return (
     <div className="flex flex-col">
       <Navbar />
@@ -83,14 +82,7 @@ function App() {
 
         <Route path="dashboard/my-profile" element={<MyProfile />} />
         <Route path="dashboard/Settings" element={<Settings />} />
-      {
-        user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
-          <>
-            <Route path="dashboard/instructor" element={<Instructor />} />
-
-          </>
-        )
-      }
+  
 
         </Route>
 

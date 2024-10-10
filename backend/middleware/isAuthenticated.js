@@ -67,22 +67,3 @@ export const isAdmin = async (req, res, next) => {
 			.json({ success: false, message: `User Role Can't be Verified` });
 	}
 };
-
-export const isInstructor = async (req, res, next) => {
-	try {
-		const userDetails = await User.findOne({ email: req.user.email });
-		
-
-		if (userDetails.accountType !== "Instructor") {
-			return res.status(401).json({
-				success: false,
-				message: "This is a Protected Route for Instructor",
-			});
-		}
-		next();
-	} catch (error) {
-		return res
-			.status(500)
-			.json({ success: false, message: `User Role Can't be Verified` });
-	}
-};

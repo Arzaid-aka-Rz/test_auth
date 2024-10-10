@@ -24,8 +24,9 @@ const userSchema = new mongoose.Schema({
     },
     accountType:{
         type:String,
-        enum : ["Admin", "User", "Instructor"],
+        enum : ["Admin", "User"],
         required:true,
+        default: "User" 
     },
     additionalDetails: {
         type:mongoose.Schema.Types.ObjectId,

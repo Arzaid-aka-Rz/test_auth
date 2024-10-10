@@ -1,7 +1,7 @@
 import { sendOtp } from "@/apiServices/apiHandlers/authAPI";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ACCOUNT_TYPE } from "@/data/constants";
+
 import { setSignupData } from "@/redux/authSlice";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
@@ -11,19 +11,7 @@ import { toast } from "sonner";
 
 const SignupForm = () => {
 
-    
-  const tabData=[
-    {
-        id:1,
-        tabName:"User",
-        type:ACCOUNT_TYPE.USER,
-    },
-    {
-        id:2,
-        tabName:"Instructor",
-        type:ACCOUNT_TYPE.INSTRUCTOR,
-    }
-  ]
+  
   
 
     const navigate = useNavigate();
@@ -31,8 +19,6 @@ const SignupForm = () => {
 
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-
-    const [accountType,setAccountType] = useState(ACCOUNT_TYPE.USER);
 
  const [formData,setFormData]= useState({
     firstName: "",
@@ -60,7 +46,6 @@ const SignupForm = () => {
     }
     const signupData={
         ...formData,
-        accountType
     }
 
     
@@ -77,13 +62,11 @@ const SignupForm = () => {
       password: "",
       confirmPassword: "",
     })
-    setAccountType(ACCOUNT_TYPE.USER)
   }
 
 
   return (
     <div className="container">
-            <Tab tabData={tabData} field={accountType} setField={setAccountType} />
       <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-4">
         <div className="flex gap-x-64">
           <label>
@@ -179,23 +162,3 @@ const SignupForm = () => {
 
 export default SignupForm;
 
-const Tab = ({ tabData, field, setField }) => {
-    return (
-      <div className="flex justify-center gap-4 mb-10">
-        {tabData.map((tab) => (
-          <Button
-            key={tab.id}
-            onClick={() => setField(tab.type)}
-            className={`px-6 py-2 rounded-lg transition-all duration-300 ${
-              field === tab.type
-                ? "bg-blue-600 text-white shadow-lg transform scale-105"
-                : "bg-gray-200 text-gray-600 hover:bg-gray-300"
-            }`}
-          >
-            {tab?.tabName}
-          </Button>
-        ))}
-      </div>
-    );
-  };
-  

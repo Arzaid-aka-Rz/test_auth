@@ -21,7 +21,7 @@ const Navbar = () => {
 
           
             {/* Login / Signup / Dashboard */}
-            <div className="hidden items-center gap-x-4 md:flex">
+            <div className="items-center gap-x-4 flex">
               {token === null && (
                 <Link to="/login">
                   <Button className="bg-black">Log in</Button>
