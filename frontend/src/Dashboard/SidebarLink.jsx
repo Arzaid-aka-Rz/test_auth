@@ -8,9 +8,9 @@ const SidebarLink = ({ link, iconName }) => {
     <NavLink
     to={link.path}
     >
-      <div className="flex items-center gap-x-2">
-        <Icon />
-        <span>{link.name}</span>
+      <div className="flex items-center gap-2">
+        <Icon/>
+        <span className="mb-1 text-lg flex">{link.name}</span>
       </div>
     </NavLink>
   );

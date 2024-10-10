@@ -44,19 +44,21 @@ const VerifyEmail = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-16">
       {loading ? (
         <div>
           <div>Loading...</div>
         </div>
       ) : (
-        <div className="container p-4 lg:p-8">
-          <h1 className=" font-semibold text-xl leading-3">Verify Email</h1>
+        <div className="bg-white shadow-md rounded-lg p-8 mx-4 sm:mx-auto max-w-md w-full">
+          <h1 className=" text-2xl font-bold uppercase  text-center  mb-6">Verify Email</h1>
           <p className="text-xl  my-4 ">
             A verification code has been sent to you. Enter the code below
           </p>
 
-          <form onSubmit={handleVerifyAndSignup}>
+          <form 
+          className="flex flex-col gap-4"
+          onSubmit={handleVerifyAndSignup}>
             <OTPInput
               value={otp}
               onChange={setOtp}

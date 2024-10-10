@@ -4,21 +4,21 @@ import LoginForm from "./LoginForm";
 
 const Template = ({ title, formType }) => {
   const { loading } = useSelector((state) => state.auth);
+
   return (
-    <div>
-      {loading ? (
-        <div>Loading ...</div>
-      ) : (
-        <div className="container">
-          <div className="flex flex-col gap-y-12 py-12">
-            <h1 className="text-4xl font-semibold leading-3">{title}</h1>
+    <div className="flex flex-col min-h-screen  mt-8"> 
+      <div className="flex-grow flex items-start justify-center py-12"> 
+        {loading ? (
+          <div className="text-lg font-semibold">Loading...</div>
+        ) : (
+          <div className="bg-white shadow-md rounded-lg p-8 mx-4 sm:mx-auto max-w-md w-full">
+
+            <h1 className=" text-2xl font-bold uppercase  text-center  mb-6">{title}</h1>
             
-            {
-                formType==="signup" ? <SignupForm/> :<LoginForm/>
-            }
+            {formType === "signup" ? <SignupForm /> : <LoginForm />}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

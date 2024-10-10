@@ -61,14 +61,14 @@ const ChangeProfilePicture = () => {
   return (
     <>
       <div>
-        <div>
+        <div className="flex justify-between items-center">
           <img
             src={previewSource || user?.image}
             alt={`profile-${user?.firstName}`}
             className="aspect-square w-[78px] rounded-full object-cover"
           />
           <div>
-            <p>Change Profile Picture</p>
+            <p className="text-lg text-end m-2">Change Profile Picture</p>
             <div>
               <input
                 type="file"
@@ -77,8 +77,9 @@ const ChangeProfilePicture = () => {
                 className="hidden"
                 accept="image/png, image/gif, image/jpeg"
               />
-
-              <Button onClick={handleClick} disabled={loading}>
+<div className="flex gap-5 mt-2">
+ 
+<Button onClick={handleClick} disabled={loading}>
                 Select
               </Button>
 
@@ -86,6 +87,7 @@ const ChangeProfilePicture = () => {
                 {loading ? "Uploading..." : "Upload"}
                 {!loading && <File />}
               </Button>
+</div>
             </div>
           </div>
         </div>

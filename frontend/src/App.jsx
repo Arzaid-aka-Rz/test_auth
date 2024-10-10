@@ -17,7 +17,7 @@ import Settings from "./Dashboard/Settings/Settings";
 function App() {
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-black">
       <Navbar />
       <Routes>
         {/* Route for all */}

@@ -66,12 +66,12 @@ const SignupForm = () => {
 
 
   return (
-    <div className="container">
-      <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-4">
-        <div className="flex gap-x-64">
-          <label>
-            <p className="mb-1 text-xl  leading-3">
-              First Name <sup>*</sup>
+    <div className="max-w-md mx-auto pb-8 bg-white ">
+      <form onSubmit={handleOnSubmit} className="flex flex-col gap-4">
+        <div className="flex gap-4">
+          <label className="w-full">
+            <p className="mb-1 text-lg">
+              First Name <sup className="text-red-500">*</sup>
             </p>
             <Input
               required
@@ -83,9 +83,9 @@ const SignupForm = () => {
             />
           </label>
 
-          <label>
-            <p className="mb-1 text-xl  leading-3">
-              Last Name <sup>*</sup>
+          <label className="w-full">
+            <p className="mb-1 text-lg">
+              Last Name <sup className="text-red-500">*</sup>
             </p>
             <Input
               required
@@ -99,7 +99,7 @@ const SignupForm = () => {
         </div>
 
         <label className="w-full">
-          <p className="mb-1 text-xl  leading-3">Email Address</p>
+          <p className="mb-1 text-lg">Email Address</p>
           <Input
             required
             type="text"
@@ -112,9 +112,9 @@ const SignupForm = () => {
 
         <div className="flex gap-4">
 
-          <label className="relative">
-            <p className="mb-1 text-xl  leading-3 ">
-              Create Password <sup>*</sup>
+          <label  className="relative w-full">
+            <p className="mb-1 text-lg">
+              Create Password <sup className="text-red-500">*</sup>
             </p>
             <Input
             required
@@ -126,15 +126,15 @@ const SignupForm = () => {
             />
             <span
              onClick={() => setShowPassword((prev) => !prev)}
-            className="absolute right-3 top-[25px] z-[10] cursor-pointer">
+             className="absolute right-3 top-[38px] z-[10] cursor-pointer">
               {showPassword ?  <Eye/> :   <EyeOff/> }
             </span>
           </label>
 
 
-          <label className="relative">
-            <p className="mb-1 text-xl  leading-3 ">
-              Confirm Password <sup>*</sup>
+          <label className="relative w-full">
+            <p className="mb-1 text-lg">
+              Confirm Password <sup className="text-red-500">*</sup>
             </p>
             <Input
             required
@@ -146,14 +146,14 @@ const SignupForm = () => {
             />
             <span 
              onClick={() => setShowConfirmPassword((prev) => !prev)}
-            className="absolute right-3 top-[25px] z-[10] cursor-pointer">
+             className="absolute right-3 top-[38px] z-[10] cursor-pointer">
             {showConfirmPassword ? <EyeOff/> : <Eye/> }
             </span>
           </label>        
 
         </div>
 
-        <Button type="submit" className="bg-black">Create Account</Button>
+        <Button type="submit" className="bg-black text-white mt-4">Create Account</Button>
         
       </form>
     </div>

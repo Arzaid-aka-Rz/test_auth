@@ -5,8 +5,8 @@ import UpdatePassword from "./UpdatePassword"
 
 const Settings = () => {
   return (
-    <>
-    <h1 className="text-3xl mt-10">Edit Profile</h1>
+    <div className="flex flex-col gap-4 text-white">
+    <h1 className="text-3xl">Edit Profile</h1>
       
       {/* Change Profile Picture */}
       <ChangeProfilePicture />
@@ -16,7 +16,7 @@ const Settings = () => {
       <UpdatePassword />
       {/* Delete Account */}
       <DeleteAccount />
-    </>
+    </div>
   )
 }
 

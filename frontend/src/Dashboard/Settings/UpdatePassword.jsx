@@ -33,20 +33,26 @@ const UpdatePassword = () => {
     <>
       <form  
       onSubmit={handleSubmit(submitPasswordForm )}
-      className="mt-10">
-        <h2>Password</h2>
-        <div>
+      className="mt-10 ">
+        <h2 className="text-2xl mb-4">Change Your Password</h2>
+        <div className="flex flex-col gap-2" >
 
-          <div>
-            <label>
+          <div  className="flex gap-4">
+            <label className="relative w-full">
+              <p className="mb-1 text-lg">
+
               Current Password
+              </p>
               <Input
                 type={showOldPassword ? "text" : "password"}
                 name="oldPassword"
                 placeholder="Enter Current Password"
                 {...register("oldPassword", { required: true })}
+                className="text-black"
               />
-              <span onClick={() => setShowOldPassword((prev) => !prev)}>
+              <span
+              className="absolute right-3 top-[38px] z-[10] text-black cursor-pointer "
+              onClick={() => setShowOldPassword((prev) => !prev)}>
                 {showOldPassword ? <Eye /> : <EyeOff />}
               </span>
             </label>
@@ -56,15 +62,21 @@ const UpdatePassword = () => {
           </div>
           
           <div>
-            <label>
+            <label className="relative w-full">
+              <p className="mb-1 text-lg">
+
               New Password
+              </p>
               <Input
                 type={showNewPassword  ? "text" : "password"}
                 name="newPassword"
                 placeholder="Enter New  Password"
                 {...register("newPassword", { required: true })}
+                className="text-black"
               />
-              <span onClick={() => setShowNewPassword((prev) => !prev)}>
+              <span onClick={() => setShowNewPassword((prev) => !prev)}
+                      
+              className="absolute right-3 top-[38px] z-[10] text-black cursor-pointer ">
                 {showNewPassword  ? <Eye /> : <EyeOff />}
               </span>
             </label>
@@ -73,7 +85,7 @@ const UpdatePassword = () => {
           )}
           </div>
 
-          <div>
+          <div className="flex gap-4 mt-3 items-center">
             <Link to="/dashboard/my-profile">Cancel</Link>
 
             <Button type="submit">Update</Button>

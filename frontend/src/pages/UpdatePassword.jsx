@@ -36,18 +36,19 @@ const UpdatePassword = () => {
 
 
   return (
-<div className="container">
+<div className="container mt-20">
 
 
     {
       loading? (<div>Loading...</div>):(
-        <div >
-        <h1>Choose your password</h1>
+        <div className="bg-white shadow-md rounded-lg p-8 mx-4 sm:mx-auto max-w-md w-full">
+          <h1 className=" text-2xl font-bold uppercase  text-center  mb-6">Choose your password</h1>
   
-        <form onSubmit={handleOnSubmit} className="mt-5 flex flex-col gap-4">
-          <label className="relative">
-            <p>
-              New Password <sup>*</sup>
+        <form onSubmit={handleOnSubmit} 
+       className="flex flex-col gap-4">
+     <label className="relative w-full">
+     <p className="mb-1 text-lg">
+              New Password <sup className="text-red-500">*</sup>
             </p>
             <Input
               required
@@ -64,10 +65,10 @@ const UpdatePassword = () => {
               {showPassword ? <EyeIcon /> : <EyeOff />}
             </span>
           </label>
-  
-          <label className="relative ">
-            <p>
-              Confirm New Password <sup>*</sup>
+
+          <label className="relative w-full">
+          <p className="mb-1 text-lg">
+              Confirm New Password <sup className="text-red-500">*</sup>
             </p>
             <Input
               required
@@ -90,11 +91,14 @@ const UpdatePassword = () => {
           </Button>
         </form>
   
-        <div>
+        <div className="flex items-center gap-2 mt-2">
           <Link to="/login">
             <p>
-              <ArrowLeft /> Back To Login
+              <ArrowLeft /> 
             </p>
+          </Link>
+          <Link to="/login">
+          Back To Login
           </Link>
         </div>
       </div>

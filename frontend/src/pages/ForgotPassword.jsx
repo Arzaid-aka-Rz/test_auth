@@ -18,12 +18,12 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="container">
+    <div className="flex-grow flex items-start justify-center py-12 mt-12">
       {loading ? (
-        <div> loading</div>
+        <div > loading</div>
       ) : (
-        <div>
-          <h1>{!emailSent ? "  Reset your password" : "Check Email"}</h1>
+        <div className="bg-white shadow-md rounded-lg p-8 mx-4 sm:mx-auto max-w-md w-full">
+          <h1 className=" text-2xl font-bold uppercase  text-center  mb-6">{!emailSent ? "  Reset your password" : "Check Email"}</h1>
           <p>
           {!emailSent
               ? "Have no fear. We'll email you instructions to reset your password. If you dont have access to your email we can try account recovery"
@@ -34,9 +34,9 @@ const ForgotPassword = () => {
           onSubmit={handleOnSubmit}
           className="mt-5 flex flex-col gap-5">
           {!emailSent && (
-            <label>
-              <p>
-                Email Address <sup>*</sup>
+            <label className="w-full">
+               <p className="mb-1 text-lg">
+                Email Address <sup className="text-red-500">*</sup>
               </p>
               <Input
                 required
@@ -55,8 +55,8 @@ const ForgotPassword = () => {
           </form>
 
           
-          <div>
-              <Link>
+          <div className="mt-2">
+              <Link to="/login">
                 <p className="flex items-center gap-x-2">
                   <ArrowLeft />
                   Back to Login
